@@ -421,5 +421,20 @@ public function doAction3()
 </section>
 
 
+<!----------------------------------------------------->
+<!-- Шаблоны проэктирования --------------------------->
+<!--  ----------------------------------------->
+<!----------------------------------------------------->
+<section class="card">
+    <div class="card-body">
+        <h2 class="alert alert-info">Шаблоны проэктирования</h2>
+        <div class="card">
+            <div class="card-body">
+                <a href="https://designpatternsphp.readthedocs.io/ru/latest/README.html">DesignPatternsPHP</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
