@@ -8,10 +8,8 @@ use zapaDEVe7n\WFMS\Product\ProductFull;
 use zapaDEVe7n\WFMS\Product\BookProduct;
 use zapaDEVe7n\WFMS\Product\NotebookProduct;
 
-
 use zapaDEVe7n\WFMS\ProductAbstract\BookProductAbstract;
 use zapaDEVe7n\WFMS\ProductAbstract\NotebookProductAbstract;
-
 
 use zapaDEVe7n\WFMS\ProductInterface\BookProductInterface;
 use zapaDEVe7n\WFMS\ProductInterface\NotebookProductInterface;
@@ -176,12 +174,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
                 <p>=> PHP5</p>
 
                 <?php
-                $book = new BookProductAbstract('Book Title', 20, 1500);
-                $notebook = new NotebookProductAbstract('Dell', 500, 'Intel');
+                $book2 = new BookProductAbstract('Book Title', 20, 1500);
+                $notebook2 = new NotebookProductAbstract('Dell', 500, 'Intel');
 
-                echo $book->getProduct();
+                echo $book2->getProduct();
 
-                echo $notebook->getProduct();
+                echo $notebook2->getProduct();
 
                 ?>
             </div>
@@ -204,12 +202,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
         <div class="card">
             <div class="card-body">
                 <?php
-                $book = new BookProductInterface('Book Title', 20, 1500);
-                $notebook = new NotebookProductInterface('Dell', 500, 'Intel');
 
-                echo $book->getProduct();
+                    $book3 = new BookProductInterface('Book Title', 20, 1500);
 
-                echo $notebook->getProduct();
+                    echo $book3->getProduct();
+
                 ?>
 
             </div>
