@@ -15,7 +15,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
 						<label for="addTaskContent" class="form-label">Add Task Content</label>
 					</div>
 					<div class="mb-3">
-						<button w-100type="submit" class="btn btn-success w-100">Add</button>
+						<button type="submit" class="btn btn-success w-100">Add</button>
 					</div>
 				</form>
 			</div>

@@ -6,13 +6,15 @@
                 <h1>Create Task</h1>
                 <form action="store.php" method="post">
                     <div class="mb-3">
-                        <input type="text" class="form-control" name="title">
+                        <label for="title"></label>
+                        <input id="title" type="text" class="form-control" name="title">
                     </div>
                     <div class="mb-3">
-                        <textarea name="content" class="form-control"></textarea>
+                        <label for="message"></label>
+                        <textarea id="message" name="content" class="form-control"></textarea>
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-success">Sybmit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </form>
             </div>
