@@ -1,10 +1,10 @@
 <?php
 
-namespace zapaDEVe7n\WFMS\ProductInterface;
+namespace zapaDEVe7n\WFMS\ProductTrait;
 
-use zapaDEVe7n\WFMS\ProductInterface\Interfaces\IGadget;
+use zapaDEVe7n\WFMS\ProductTrait\Traits\TColor;
 
-class NotebookProductInterface extends ProductInterface implements IGadget
+class NotebookProductTrait extends ProductTrait
 {
     public $cpu;
 
@@ -31,4 +31,6 @@ class NotebookProductInterface extends ProductInterface implements IGadget
     {
 
     }
+
+    use TColor;
 }

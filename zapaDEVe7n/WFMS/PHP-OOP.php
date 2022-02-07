@@ -11,8 +11,16 @@ use zapaDEVe7n\WFMS\Product\NotebookProduct;
 use zapaDEVe7n\WFMS\ProductAbstract\BookProductAbstract;
 use zapaDEVe7n\WFMS\ProductAbstract\NotebookProductAbstract;
 
+use zapaDEVe7n\WFMS\ProductInterface\A;
+use zapaDEVe7n\WFMS\ProductInterface\B;
 use zapaDEVe7n\WFMS\ProductInterface\BookProductInterface;
+use zapaDEVe7n\WFMS\ProductInterface\C;
+use zapaDEVe7n\WFMS\ProductInterface\Interfaces\IGadget;
 use zapaDEVe7n\WFMS\ProductInterface\NotebookProductInterface;
+use zapaDEVe7n\WFMS\ProductInterface\ProductInterface;
+
+use zapaDEVe7n\WFMS\ProductTrait\BookProductTrait;
+use zapaDEVe7n\WFMS\ProductTrait\NotebookProductTrait;
 
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
@@ -204,8 +212,75 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
                 <?php
 
                     $book3 = new BookProductInterface('Book Title', 20, 1500);
+                    $notebook3 = new NotebookProductInterface('Dell', 500, 'Intel');
 
-                    echo $book3->getProduct();
+                    echo '<pre>';
+                    var_dump($book3);
+                    echo '</pre>';
+
+
+                    $a = new A();
+                    $b = new B();
+                    $c = new C();
+
+//                    echo '<pre>';
+//                    var_dump($a instanceof A);
+//                    echo '</pre>';
+
+                    echo '<pre>';
+                    var_dump($b instanceof B);
+                    echo '</pre>';
+
+//                    echo '<pre>';
+//                    var_dump($c instanceof C);
+//                    echo '</pre>';
+
+
+                    echo '<pre>';
+                    var_dump($b instanceof A);
+                    echo '</pre>';
+
+
+                    function offerCase(IGadget $product) {
+                        echo 'Case for ' . $product->getName();
+                    }
+
+                    echo offerCase($notebook3) . ' -- only Notebook<br>';
+
+//                    echo offerCase($book3) . ' -- only Notebook';
+
+                    echo '$book3 instanceof BookProductInterface, ProductInterface, IGadget';
+                    echo '<pre>';
+                    var_dump($book3 instanceof BookProductInterface);
+                    echo '</pre>';
+
+                    echo '<pre>';
+                    var_dump($book3 instanceof ProductInterface);
+                    echo '</pre>';
+
+                    echo '<pre>';
+                    var_dump($book3 instanceof IGadget);
+                    echo '</pre>';
+
+
+
+
+                    echo '$notebook3 instanseof NotebookProductInterface, ProductInterface, IGadget';
+                    echo '<pre>';
+                    var_dump($notebook3 instanceof NotebookProductInterface);
+                    echo '</pre>';
+
+                    echo '<pre>';
+                    var_dump($notebook3 instanceof ProductInterface);
+                    echo '</pre>';
+
+                    echo '<pre>';
+                    var_dump($notebook3 instanceof IGadget);
+                    echo '</pre>';
+
+
+
+
 
                 ?>
 
@@ -215,6 +290,135 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 </section>
 
 
+
+
+
+<!----------------------------------------------------->
+<!-- Трейты ------------------------------------------->
+<!-- класс ProductTrait ------------------------------->
+<!----------------------------------------------------->
+<section class="card">
+    <div class="card-body">
+        <h2 class="alert alert-info">Трейты</h2>
+        <div class="card card-body">
+            <?php
+
+                $book4 = new BookProductTrait('Book Title', 20, 1500);
+                $notebook4 = new NotebookProductTrait('Dell', 500, 'Intel');
+
+                echo '<pre>';
+                var_dump($book4);
+                echo '</pre>';
+
+
+                echo '<pre>';
+                var_dump($notebook4);
+                echo '</pre>';
+
+            ?>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!----------------------------------------------------->
+<!-- Позднее статическое связывание ------------------->
+<!-- WFMS/LSB ----------------------------------------->
+<!----------------------------------------------------->
+<section class="card">
+    <div class="card-body">
+        <h2 class="alert alert-info">Позднее статическое связывание - Late Static Bindings (LSB)</h2>
+        <div class="card">
+            <div class="card-body">
+                <p>=> PHP 5.3</p>
+
+                <?php
+                    $a = new zapaDEVe7n\WFMS\LSB\A();
+                    $b = new zapaDEVe7n\WFMS\LSB\B();
+
+                    $a->getTest();
+                    echo '<br>';
+                    $b->getTest();
+                    echo '<br>';
+
+                    echo '<hr>';
+
+                    $a->getTest2();
+                    echo '<br>';
+                    $b->getTest2();
+                    echo '<br>';
+
+                ?>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!----------------------------------------------------->
+<!-- Цепочка методов ---------------------------------->
+<!--  ----------------------------------------->
+<!----------------------------------------------------->
+<section class="card">
+    <div class="card-body">
+        <h2 class="alert alert-info">Цепочка методов</h2>
+        <div class="card">
+            <div class="card-body">
+<pre>
+
+$a->doAction1()->doAction2()->doAction3();
+
+// Каждый метод должен возвращать оъект
+
+public function doAction1()
+{
+    ...
+    return $this;
+}
+
+public function doAction2()
+{
+    ...
+    return $this;
+}
+
+public function doAction3()
+{
+    ...
+    return $this;
+}
+</pre>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!----------------------------------------------------->
+<!-- Магические методы -------------------------------->
+<!--  ----------------------------------------->
+<!----------------------------------------------------->
+<section class="card">
+    <div class="card-body">
+        <h2 class="alert alert-info">Магические методы</h2>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="alert alert-warning">__toString</h3>
+                <h3 class="alert alert-warning">__set</h3>
+                <h3 class="alert alert-warning">__get</h3>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <?php
