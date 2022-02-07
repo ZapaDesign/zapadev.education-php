@@ -1,0 +1,8 @@
+{
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"zapaDEVe7n\\": "zapaDEVe7n"
+		}
+	}
+}
