@@ -12,6 +12,11 @@ use zapaDEVe7n\WFMS\Product\NotebookProduct;
 use zapaDEVe7n\WFMS\ProductAbstract\BookProductAbstract;
 use zapaDEVe7n\WFMS\ProductAbstract\NotebookProductAbstract;
 
+
+use zapaDEVe7n\WFMS\ProductInterface\BookProductInterface;
+use zapaDEVe7n\WFMS\ProductInterface\NotebookProductInterface;
+
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 ?>
 
@@ -160,7 +165,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
 
 <!----------------------------------------------------->
-<!-- Абстрактные классы ----------------------->
+<!-- Абстрактные классы ------------------------------->
+<!-- класс ProductAbstract ---------------------------->
 <!----------------------------------------------------->
 <section class="card">
     <div class="card-body">
@@ -190,13 +196,22 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
 <!----------------------------------------------------->
 <!-- Интерфейсы и контроль типа ----------------------->
+<!-- класс ProductInterface --------------------------->
 <!----------------------------------------------------->
 <section class="card">
     <div class="card-body">
         <h2 class="alert alert-info">Интерфейсы и контроль типа</h2>
         <div class="card">
             <div class="card-body">
-                zapadev.education-php
+                <?php
+                $book = new BookProductInterface('Book Title', 20, 1500);
+                $notebook = new NotebookProductInterface('Dell', 500, 'Intel');
+
+                echo $book->getProduct();
+
+                echo $notebook->getProduct();
+                ?>
+
             </div>
         </div>
     </div>
