@@ -45,6 +45,12 @@ require __DIR__ . '/vendor/autoload.php';
                     <li class="nav-item">
                         <a class="nav-link" href="/zapaDEVe7n/WFMS/PHP-OOP.php">WFMS OOP</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/zapaDEVe7n/MRLN/ToDo_One/index.php">MRLN ToDo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/zapaDEVe7n/MRLN/ToDo_Two/index.php">MRLN ToDo 2</a>
+                    </li>
                 </ul>
             </div>
         </div>
